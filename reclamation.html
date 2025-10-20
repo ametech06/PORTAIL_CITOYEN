@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réclamation - e-Justice Côte d'Ivoire</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ====== STYLE DE BASE ====== */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      background: #0c1b33;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0c1b33;
+    }
+
+    form {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #0c1b33;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #152b57;
+    }
+
+    .info {
+      background: #f0f3f9;
+      border-left: 4px solid #0c1b33;
+      padding: 15px;
+      margin-bottom: 20px;
+      color: #333;
+      border-radius: 6px;
+    }
+
+    footer {
+      background: #0c1b33;
+      color: #fff;
+      text-align: center;
+      padding: 15px 10px;
+      margin-top: 40px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <h1>Plateforme e-Justice Côte d’Ivoire</h1>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+    <h2>Formulaire de Réclamation</h2>
+
+    <div class="info">
+      Merci de renseigner ce formulaire pour signaler un problème ou faire une remarque concernant
+      une demande, un acte ou un service en ligne.
+    </div>
+
+    <form action="traitement_reclamation.php" method="POST">
+      <div>
+        <label for="nom">Nom complet *</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom complet" required>
+      </div>
+
+      <div>
+        <label for="email">Adresse e-mail *</label>
+        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+      </div>
+
+      <div>
+        <label for="telephone">Numéro de téléphone</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="+225 07 00 00 00 00">
+      </div>
+
+      <div>
+        <label for="objet">Objet de la réclamation *</label>
+        <select id="objet" name="objet" required>
+          <option value="">-- Sélectionnez un objet --</option>
+          <option value="retard">Retard de traitement</option>
+          <option value="erreur">Erreur sur un document</option>
+          <option value="accès">Problème d’accès au service</option>
+          <option value="autre">Autre</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="message">Détail de la réclamation *</label>
+        <textarea id="message" name="message" placeholder="Expliquez votre problème ici..." required></textarea>
+      </div>
+
+      <button type="submit">Envoyer la réclamation</button>
+    </form>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    &copy; 2025 Ministère de la Justice et des Droits de l’Homme — Tous droits réservés.
+  </footer>
+</body>
+</html>
