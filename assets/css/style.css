@@ -7,8 +7,8 @@ body {
 }
 
 header {
-  background: #004aad;
-  color: white;
+  background: #beff5c;
+  color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,7 +16,7 @@ header {
 }
 
 nav a {
-  color: white;
+  color: rebeccapurple;
   margin-left: 20px;
   text-decoration: none;
   font-weight: bold;
@@ -43,7 +43,7 @@ nav a.active, nav a:hover {
   text-decoration: none;
   margin-top: 15px;
 }
-.btn:hover { background: #0056b3; }
+.btn:hover { background: #b30000; }
 
 .container {
   width: 80%;
@@ -65,9 +65,12 @@ nav a.active, nav a:hover {
 }
 
 footer {
+  Position: absolute;
+  bottom: 0;
+  width: 100%;
   text-align: center;
   padding: 20px;
-  background: #004aad;
+  background: #FF9D8A;
   color: white;
   margin-top: 40px;
 }
