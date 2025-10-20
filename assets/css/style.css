@@ -2,8 +2,15 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url("/assets/images/fondpc&docs.avif");
-  background-position: 1OO%;
+  margin: 0;
+  padding: 0;
+  background-image: url("/assets/images/fondpc&docs.avif"); /* adapte le chemin */
+  background-repeat: no-repeat;     /* empêche la répétition */
+  background-size: cover;           /* l’image couvre tout l’écran */
+  background-position: center;      /* l’image est centrée */
+  background-attachment: fixed;     /* optionnel : effet de fond fixe */
+  position: relative;
+  background-position:0%;
   color: #333333;
 }
 
