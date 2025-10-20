@@ -3,10 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connexion - Portail Citoyen</title>
+  <title>Contact - Portail Citoyen</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    /* ====== STYLES SPÉCIFIQUES AU CONTACT ====== */
+    .contact-section {
+      max-width: 900px;
+      margin: 60px auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 40px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-section h2 {
+      text-align: center;
+      color: #0c1b33;
+      margin-bottom: 20px;
+    }
+
+    .contact-info {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .contact-info p {
+      margin: 8px 0;
+      color: #444;
+      font-size: 1rem;
+    }
+
+    .contact-info a {
+      color: #0c1b33;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .contact-info a:hover {
+      color: #ffc107;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #0c1b33;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      width: fit-content;
+      align-self: flex-end;
+    }
+
+    button:hover {
+      background-color: #152b57;
+    }
+
+    .map-container {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 350px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="logo">
       <img src="assets/images/logo.png" alt="Logo" height="50">
@@ -15,28 +107,89 @@
     <nav>
       <a href="index.html">Accueil</a>
       <a href="services.html">Services</a>
+      <a href="demande.html">Faire une demande</a>
+      <a href="suivi.html">Suivi</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
   </header>
 
-  <main class="register-container">
-    <form id="loginForm" class="form-box">
-      <label for="email">E-mail :</label>
-      <input type="email" id="email" required>
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section">
+    <h2>Contactez-nous</h2>
 
-      <label for="password">Mot de passe :</label>
-      <input type="password" id="password" required>
+    <div class="contact-info">
+      <p>📧 Email : <a href="mailto:reclamation@e-justice.ci">reclamation@e-justice.ci</a></p>
+      <p>📞 Téléphone 1 : <a href="tel:+2250707612092">+225 07 07 61 20 92</a></p>
+      <p>📞 Téléphone 2 : <a href="tel:+2250503977617">+225 05 03 97 76 17</a></p>
+      <p>📍 Adresse : Plateau, Abidjan - Ministère de la Justice et des Droits de l’Homme</p>
+    </div>
 
-      <button type="submit" class="btn">Se connecter</button>
+    <form action="traitement_contact.php" method="POST">
+      <div>
+        <label for="nom">Nom complet *</label>
+        <input type="text" id="nom" name="nom" placeholder="Entrez votre nom complet" required>
+      </div>
 
-      <p class="link">Pas encore inscrit ? <a href="register.html">Créer un compte</a></p>
+      <div>
+        <label for="email">Adresse e-mail *</label>
+        <input type="email" id="email" name="email" placeholder="exemple@mail.com" required>
+      </div>
+
+      <div>
+        <label for="sujet">Sujet *</label>
+        <input type="text" id="sujet" name="sujet" placeholder="Objet de votre message" required>
+      </div>
+
+      <div>
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" placeholder="Votre message ici..." required></textarea>
+      </div>
+
+      <button type="submit">Envoyer le message</button>
     </form>
-  </main>
 
-  <footer>
-    <p>© 2025 Portail Citoyen | Tous droits réservés</p>
+    <!-- ===== GOOGLE MAP (optionnelle) ===== -->
+    <div class="map-container">
+      <h3>Nous localiser</h3><br>
+      <iframe src="https://www.google.com/maps?q=Plateau+Abidjan+Côte+d'Ivoire&output=embed"></iframe>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>Plateforme e-Justice Côte d'Ivoire</h3>
+        <p>
+          La plateforme e-Justice est un service du Ministère de la Justice et des Droits de l’Homme
+          de Côte d’Ivoire. Elle vise à moderniser le système judiciaire à travers la
+          digitalisation et la sécurisation des actes de justice.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Liens utiles</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="reclamation.html">Réclamation</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li>Email : <a href="mailto:reclamation@e-justice.ci">reclamation@e-justice.ci</a></li>
+          <li>Téléphone 1 : <a href="tel:+2250707612092">+225 07 07 61 20 92</a></li>
+          <li>Téléphone 2 : <a href="tel:+2250503977617">+225 05 03 97 76 17</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Ministère de la Justice et des Droits de l’Homme - Tous droits réservés.</p>
+    </div>
   </footer>
-
-  <script src="assets/js/script.js"></script>
 </body>
 </html>

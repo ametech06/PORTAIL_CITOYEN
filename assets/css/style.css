@@ -2,8 +2,9 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: #f7f9fb;
-  color: #333;
+  background-image: url("/assets/images/fondpc&docs.avif");
+  background-position: 1OO%;
+  color: #333333;
 }
 
 header {
@@ -31,17 +32,17 @@ nav a.active, nav a:hover {
   padding: 100px 20px;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
               url('../images/hero-bg.jpg') center/cover no-repeat;
-  color: white;
+  color: yellow;
 }
 
 .btn {
   display: inline-block;
   padding: 10px 20px;
   background: orange;
-  color: white;
+  color: black;
   border-radius: 5px;
   text-decoration: none;
-  margin-top: 15px;
+  margin-top: 1px;
 }
 .btn:hover { background: #b30000; }
 
@@ -168,4 +169,7 @@ font-display: auto;
   width: 250px;
   text-align: center;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.hero{
+  background: ;
 }
